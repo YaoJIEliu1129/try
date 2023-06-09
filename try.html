@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频播放</title>
+</head>
+<body>
+    <video src="413d7b7bc0870622233005259cbc5d07.mp4" controls autoplay onended="this.pause();" onplay="this.setAttribute('controls', 'controls')" onpause="this.removeAttribute('controls')">
+    </video>
+  
+    
+
+    <script>
+        var video = document.getElementById("myVideo");
+
+        function playVideoOnce() {
+            video.play();
+            video.removeEventListener("ended", playVideoOnce);
+        }
+
+        video.addEventListener("ended", playVideoOnce);
+    </script>
+</body>
+</html>
+
+
